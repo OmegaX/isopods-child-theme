@@ -1,0 +1,84 @@
+.navbar {
+    font-size: $font-size-lg;
+    font-family: $font-family-sans-serif;
+    padding: 0;
+    z-index: 99;
+
+    @include media-breakpoint-up(md) {
+        font-size: $font-size-sm;
+    }
+
+    .dropdown-menu {
+        background-color: $white;
+    }
+
+    .navbar-nav {
+      flex-flow: row wrap;
+    }
+
+    .menu-item {
+      margin-right: 1rem;
+    }
+
+    .navbar-collapse {
+        display: none;
+
+        @include media-breakpoint-down(md) {
+            @include position(absolute, 100%, -1rem, auto, -1rem);
+            border-bottom: .5rem solid $primary;
+            background-color: $white;
+            color: $black;
+            padding: 1rem 2rem;
+            min-width: 100%;
+            z-index: 9999;
+        }
+
+        &.show {
+            display: block;
+        }
+    }
+
+    .fa-search {
+        font-size: 1.25rem;
+        padding: 0;
+        color: $primary;
+        transition: $transition-base;
+
+        @include media-breakpoint-up(lg) {
+            margin-left: 1rem;
+        }
+    }
+
+    .dropdown-toggle::after {
+        content: "\f107";
+        font-family: 'Font Awesome 5 Free';
+        visibility: visible;
+        font-weight: 900;
+        transition: .3s transform ease-in-out;
+        vertical-align: 0;
+        border: 0;
+        font-size: .75rem;
+    }
+
+    .nav-link {
+        text-align: center;
+    }
+
+    .show > .dropdown-toggle::after {
+        transform: rotate(180deg);
+    }
+
+    .navbar-toggler {
+
+        .fas {
+            font-size: 1.5rem;
+        }
+
+        // @include media-breakpoint-down(md) {
+        //     display: flex;
+        //     align-items: center;
+        //     justify-content: flex-end;
+        //     padding: 0 1rem;
+        //}
+    }
+}

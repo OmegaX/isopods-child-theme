@@ -1,0 +1,221 @@
+body {
+	@include scroll-bar();
+	background-color: $black;
+}
+
+address {
+	font-style: normal;
+}
+
+a, h1, h2, h3, h4, h5, h6 {
+	color: inherit;
+	text-align: inherit;
+}
+
+h4, h5, h6 {
+	font-family: $font-family-sans-serif;
+	font-weight: $font-weight-normal;
+}
+
+p {
+	margin-bottom: .5rem;
+
+	&:last-child {
+		margin-bottom: 0;
+	}
+}
+
+.parallax-slider {
+	cursor: none;
+
+	&::after {
+		width: 175px;
+		height: 175px;
+		position: absolute;
+		border-radius: 100%;
+	}
+}
+
+.site {
+	max-width: 1600px;
+	margin: 0 auto;
+	min-height: 100vh; 
+	display: grid;
+	grid-template-rows: auto 1fr auto;
+}
+
+.wrapper {
+	padding: 2rem 0;
+	background-color: $white;
+}
+
+.entry-title {
+	margin-bottom: 1.5rem;
+}
+
+.ds-container {
+	height: 100%;
+	width: 100%;
+	margin: 0 auto;
+	padding: 0 1rem;
+
+	&--fixed {
+		//@extend .ds-container;
+		max-width: 1600px;
+
+		@include media-breakpoint-up(md) {
+			padding-left: 7.5rem;
+			padding-right: 1.5rem;
+		}
+
+		@include media-breakpoint-up(lg) {
+			padding-left: 9rem;
+			padding-right: 2rem;
+		}
+	}
+
+	&--fluid {
+		//@extend .ds-container;
+		max-width: 1600px;
+	}
+}
+
+.desc {
+	font-size: 1.15rem;
+	margin-bottom: 1rem;
+}
+
+#acf-wrapper {
+	position: relative;
+	padding-bottom: 3rem;
+	background-color: $white;
+
+	.svg-wrap {
+		@include position(absolute, 0, 0, 0, 0);
+		overflow: hidden;
+		z-index: -1;
+
+		svg {
+			width: 200%;
+			margin-left: calc(-50% + 4rem);
+			margin-top: -50%;
+			height: auto;
+			opacity: .1;
+
+			.cls-1 {
+				fill: $secondary;
+			}
+		}
+	}
+}
+
+// Adding basic WordPress classes to pass the WordPress.org tests
+.sticky,
+.gallery-caption,
+.bypostauthor {
+	font-size: inherit;
+}
+
+// Separate sticky wrapper from main content
+.wrapper#wrapper-sticky { border-bottom: 1px solid $gray-300; }
+
+// Adding some contrast background color to footer full widget
+#wrapper-footer-full,
+#wrapper-static-hero { background-color: $gray-200; }
+
+// Necessary WP classes
+.wp-caption { font-size: inherit; }
+
+.wp-caption-text { font-size: inherit; }
+
+.screen-reader-text { @extend .sr-only; }
+
+.alignleft {
+	display: inline;
+	float: left;
+	margin-right: 1.5em;
+}
+
+.alignright {
+	display: inline;
+	float: right;
+	margin-left: 1.5em;
+}
+
+.aligncenter { @extend .mx-auto; }
+
+// Post design
+.entry-footer span { padding-right: 10px; }
+
+// Limit featured image size to 100%
+img.wp-post-image,
+article img,
+figure img,
+#secondary img {
+	max-width: 100%;
+	height: auto;
+}
+
+// Skip to content link
+a.skip-link {
+	position: fixed;
+	z-index: 1000;
+	top: 0px;
+	right: 0px;
+}
+
+// Reset Jumbotron default margin
+.jumbotron { margin-bottom: 0px; }
+
+// Dropdown translation
+.navbar-dark .navbar-nav .dropdown-menu .nav-link{
+	display: block;
+	width: 100%; // For `<button>`s
+	padding: $dropdown-item-padding-y $dropdown-item-padding-x;
+	clear: both;
+	font-weight: $font-weight-normal;
+	color: $dropdown-link-color !important;
+	text-align: inherit; // For `<button>`s
+	white-space: nowrap; // prevent links from randomly breaking onto new lines
+	background: none; // For `<button>`s
+	border: 0; // For `<button>`s
+
+	@include hover-focus {
+		color: $dropdown-link-hover-color !important;
+		text-decoration: none;
+		background-color: $dropdown-link-hover-bg;
+	}
+
+	&.active,
+	&:active {
+		color: $dropdown-link-active-color !important;
+		text-decoration: none;
+		background-color: $dropdown-link-active-bg;
+	}
+
+	&.disabled,
+	&:disabled {
+		color: $dropdown-link-disabled-color !important;
+		background-color: transparent;
+		// Remove CSS gradients if they're enabled
+		@if $enable-gradients {
+			background-image: none;
+		}
+	}
+}
+
+.navbar-light .navbar-brand a {
+	color: $navbar-light-active-color;
+
+	@include hover-focus {
+		color: $navbar-light-active-color;
+	}
+}
+
+.navbar-dark .navbar-brand a {
+	color: $navbar-dark-active-color;
+
+	@include hover-focus {
+		color: $navbar-dark-active-color;
+	}
+}

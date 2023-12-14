@@ -1,0 +1,125 @@
+.footer {
+    padding: 5rem 0 3rem 0;
+    background-color: $primary;
+    color: $white;
+    position: relative;
+    overflow: hidden;
+
+    a {
+        @include make-link($gray-400, $white);
+
+        @include hover-focus() {
+            transform: scale(1.025);
+        }
+    }
+
+    .grass { // svg
+        @include position(absolute, auto, auto, -2rem, auto);
+        min-width: 1200px;
+        height: auto;
+        width: 100;
+        opacity: .3;
+        fill: $secondary;
+
+        @include media-breakpoint-up(md) {
+            @include position(absolute, 2rem, auto, auto, auto);
+        }
+    }
+
+    &__row {
+        @include make-grid-row(1);
+        position: relative;
+        z-index: 1;
+
+        @include media-breakpoint-up(sm) {
+            @include make-grid-row(3);
+        }
+    }
+
+    &__col {
+        margin-bottom: 2rem;
+        text-align: center;
+
+        &--left {
+            order: 3;
+        }
+
+        &--center {
+            order: 2;
+        }
+
+        &--right {
+            order: 1;
+        }
+
+        @include media-breakpoint-up(sm) {
+            @include make-grid-col(1);
+            align-items: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            margin-bottom: 0;
+
+            &--left {
+                order: 1;
+            }
+
+            &--right {
+                order: 3;
+            }
+        }
+
+        svg {
+            height: auto;
+            width: 50px;
+            fill: $white;
+            margin-bottom: 1rem;
+        }
+    }
+
+    &__nav-legal {
+        font-size: $font-size-sm;
+    }
+
+    &__nav-main {
+        font-family: $font-family-sans-serif;
+    }
+
+    &__credit {
+        display: block;
+        text-align: center;
+        // font-style: italic;
+
+        span:first-child {
+            display: block;
+            font-size: $font-size-base;
+        }
+
+        span + span {
+            font-size: $font-size-lg;
+        }
+
+        @include media-breakpoint-up(md) {
+           
+        }
+    }
+
+    &__copyright {
+        display: block;
+        font-size: $font-size-xs;
+        font-style: italic;
+        padding-top: .5rem;
+
+        @include media-breakpoint-up(md) {
+           
+        }
+    }
+
+    &__social-link {
+        font-size: $font-size-xl;
+
+        &:not(:last-child) {
+           
+        }
+    }
+}

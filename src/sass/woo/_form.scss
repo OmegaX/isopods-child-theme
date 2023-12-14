@@ -1,0 +1,38 @@
+.form {
+
+	&__row {
+		display: flex;
+	}
+
+	&__input {
+		@extend .form-control;
+
+		&--text {
+
+		}
+
+		&--number {
+
+		}
+
+		&--submit {
+
+		}
+	}
+
+	&__checkbox {
+		
+	}
+
+	&__radio-btn {
+		
+	}
+
+	&__input-radio {
+		
+	}
+
+	&__input-radio {
+		
+	}
+}

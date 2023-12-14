@@ -1,0 +1,92 @@
+.intro {
+    color: $white;
+    padding-top: 2rem;
+    margin-bottom: 2rem;
+
+    &__grid {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-gap: 1rem;
+
+        @include media-breakpoint-up(md) {
+            grid-template-columns: 3fr 1fr;
+            grid-gap: 2rem;
+        }
+    }
+
+    &__heading {
+        margin-bottom: 1rem;
+    }
+
+    &__col-left {
+        position: relative;
+        background-color: $primary;
+        display: flex;
+        align-items: center;
+    }
+
+    &__text-wrap {
+        padding: 2rem;
+        text-align: center;
+        position: relative;
+        z-index: 1;
+    }
+
+    &__svg-wrap {
+        @include position(absolute, 0, 0, 0, 0);
+        overflow: hidden;
+        display: flex;
+        align-items: center;
+
+        svg {
+            width: 100%;
+            height: auto;
+            opacity: .3;
+            transition: $transition-base;
+
+            .cls-1 {
+                fill: $secondary;
+            }
+        }
+    }
+
+    &__col-right {
+        background-color: $secondary;
+        padding: 1rem 2rem;
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        text-align: center;
+        flex-flow: row wrap;
+        font-family: $font-family-sans-serif;
+        transition: $transition-base;
+
+        svg {
+            height: 120px;
+            transition: $transition-base;
+        }
+
+        span {
+            font-size: $font-size-xl;
+            text-transform: uppercase;
+            transition: $transition-base;
+        }
+
+        @include media-breakpoint-up(lg) {
+            flex-flow: column nowrap;
+            padding: 2rem;
+
+            span {
+                padding-top: 1.5rem;
+            }
+        }
+
+        @include hover-focus() {
+            background-color: $primary;
+
+            span {
+                color: $white;
+            }
+        }
+    }
+}

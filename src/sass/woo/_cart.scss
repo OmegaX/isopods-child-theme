@@ -1,0 +1,214 @@
+.woocommerce-cart {
+
+	&__grid {
+
+		@include media-breakpoint-up(md) {
+			@include make-grid-row(2);
+
+			.woocommerce-notices-wrapper {
+				@include make-grid-col(2);
+				order: 1;
+			}
+		}
+	}
+
+	&__form {
+		@extend .table-responsive;
+		background-color: lighten($primary, 80%);
+		padding: 1rem;
+
+		@include media-breakpoint-up(md) {
+			@include make-grid-col(1);
+			padding: 1.5rem;
+			order: 2;
+		}
+	}
+
+	&__clicker {
+		cursor: pointer;
+		width: 100%;
+		font-size: $font-size-xs;
+		font-style: italic;
+		text-decoration: underline;
+		margin-right: .75rem;
+	}
+
+	.js-toggle {
+		display: none;
+		font-size: $font-size-xs;
+		margin-top: .75rem;
+	}
+
+	&__product-price {
+
+		.amount {
+			font-weight: $font-weight-bold;
+			color: $secondary;
+		}
+	}
+
+	&__product-name {
+		font-weight: $font-weight-bold;
+	}
+
+	&__mini-cart {
+
+	}
+
+	&__mini-cart-list {
+
+	}
+
+	&__mini-cart-item {
+		display: flex;
+		flex-flow: row nowrap;
+
+		img {
+			width: 100px;
+			height: 100px;
+		}
+
+		a {
+			display: flex;
+			flex-flow: row nowrap;
+		}
+	}
+
+	&__mini-cart-buttons {
+
+	}
+
+	&__empty {
+
+	}
+
+	&__item-data {
+
+	}
+
+	&__table {
+		@extend .table;
+
+		th {
+			text-transform: uppercase;
+			font-weight: $font-weight-bold;
+		}
+
+		td,
+		th {
+			border-bottom: $border-width solid $border-color;
+			padding-bottom: 1rem;
+			padding-top: 1rem;
+		}
+
+		td {
+			vertical-align: middle;
+		}
+
+		td.product-thumbnail {
+			width: 25%;
+			padding-left: 0;
+			padding-right: 0;
+
+			a {
+				display: block;
+				border-radius: 50%;
+				overflow: hidden;
+			}
+
+			@include media-breakpoint-up(md) {
+			}
+		}
+
+		.product-info {
+			padding-left: 1rem;
+		}
+
+		p.product-price {
+
+		}
+
+		p.product-quantity {
+
+			input {
+				width: 75px;
+			}
+		}
+	}
+
+	&__actions {
+		@include make-grid-row(1);
+
+		@include media-breakpoint-up(md) {
+			display: grid;
+			grid-template-columns: 2fr 1fr;	
+		}		
+	}
+
+	&__coupon {
+		@include make-grid-row(2);
+		grid-gap: .5rem;
+		padding-top: 1rem;
+		padding-left: 0;
+		padding-right: 0;
+		align-items: center;
+
+		@include media-breakpoint-up(md) {
+			@include make-grid-row(2);
+		}
+
+		.btn {
+			@extend .btn--round;
+		}
+	}
+
+	&__update {
+		display: none;
+	}
+
+	&__collaterals {
+		@include make-grid-col(1);
+		@include make-grid-row(1);
+
+		@include media-breakpoint-up(lg) {
+			display: grid;
+			grid-template-columns: 3fr 2fr;	
+		}
+	}
+
+	&__cross-sells {
+		@include make-grid-col(3);
+		background-color: $secondary-l;
+		padding: 2rem;
+		order: 20;
+	}
+
+	&__totals {
+		background-color: $secondary-l;
+		padding: 2rem;
+
+		@include media-breakpoint-up(md) {
+			@include make-grid-col(1);
+			order: 10;
+		}
+
+		.btn--large {
+			@extend .btn--round;
+			width: 162px;
+			height: 162px;
+		}
+	}
+
+	&__block {
+		margin-bottom: 2rem;
+	}
+
+	&__list {
+		list-style: none;
+		padding-left: 0;
+
+		input[type=radio] {
+			margin-right: .75rem;
+		}
+	}
+}

@@ -1,0 +1,17 @@
+a {
+	transition: $transition-base;
+
+	@include hover-focus {
+		text-decoration: none;
+		text-shadow: none;
+		outline: none;
+	}
+}
+
+@mixin make-link($from, $to) {
+	color: $from;
+
+	@include hover-focus() {
+		color: $to;
+	}
+}

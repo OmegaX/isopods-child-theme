@@ -1,0 +1,87 @@
+@mixin make-outline-btn($from, $to) {
+  @extend .btn;
+  background-color: transparent;
+  color: $from;
+  border: 1px solid $from;
+  transition: $transition-base;
+  border-radius: $border-radius;
+  text-transform: uppercase;
+
+  @include hover-focus() {
+    background-color: transparent;
+    color: $to;
+    border-color: $to;
+  }
+}
+
+@mixin make-solid-btn($from: $primary, $to: $l-purple, $from1: $white, $to1: $white) {
+  background-color: $from;
+  color: $from1;
+  border: .5px solid $from;
+  border-radius: $border-radius;
+  transition: $transition-base;
+  text-transform: uppercase;
+  
+  @include hover-focus() {
+    background-color: $to;
+    color: $to1;
+    border-color: $to1;
+  }
+}
+
+.btn {
+
+  &--primary {
+    display: block;
+    max-width: 260px;
+    @include make-solid-btn($orange, $green, $white, $white); 
+  }
+
+  &--large {
+    @extend .btn-lg;
+  }
+
+  &--round {
+    @include make-solid-btn($orange, $orange, $white, $white);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    height: 100px;
+    width: 100px;
+    margin: 0 auto;
+    transition: $transition-base;
+    border: 0;
+
+    @include hover-focus() {
+      transform: scale(1.1);
+      box-shadow: 0 0 6px $primary;
+    }
+
+    // &.added {
+    //   display: none;
+
+    //   & + .added_to_cart {
+    //     @extend .btn;
+    //     @extend .btn--round;
+    //     background-color: $primary;
+    //   }
+    // }
+  }
+
+  &--icon {
+    padding: .25rem;
+    border: 0;
+    border-radius: 50%;
+    line-height: 1;
+
+    @include hover-focus() {
+      //box-shadow: none;
+    }
+  }
+}
+
+.wpforms-submit {
+  @extend .btn;
+  @extend .btn--round;
+}

@@ -1,0 +1,53 @@
+.hero {
+	position: relative;
+	height: 100%;
+
+	h2 {
+		@extend h1;
+	}
+
+	&--full-height {
+		height: 60vh;
+		min-height: 60vh;
+		position: relative;
+	}
+
+	&--two-thirds {
+		height: 50vh;
+		min-height: 50vh;
+	}
+
+	&--one-half {
+		height: 40vh;
+		min-height: 40vh;
+	}
+
+	&--one-third {
+		height: 30vh;
+		min-height: 30vh;
+	}
+
+	@include media-breakpoint-up(lg) {
+
+		&--full-height {
+			height: calc(100vh - 90px - 1rem);
+			min-height: 400px;
+			max-height: 900px;
+		}
+
+		&--two-thirds {
+			height: 66vh;
+			min-height: 300px;
+		}
+
+		&--one-half {
+			height: 50vh;
+			min-height: 250px;
+		}
+
+		&--one-third {
+			height: 33vh;
+			min-height: 150px;
+		}
+	}
+}

@@ -1,0 +1,80 @@
+.parallax {
+    height: 100%;
+
+    h2 {
+        margin-bottom: 1rem;
+    }
+
+    h4 {
+        line-height: 1.5;
+    }
+
+    &__outer-container {
+        @extend .ds-container;
+    }
+
+    &__inner-container {
+        @extend .ds-container;
+        position: relative;
+        padding: 1rem 0;
+    }
+
+    &__data-img {
+        @include position(absolute, 0, 0, 0, 0);
+    }
+
+    &__carousel {
+        height: 100%;
+        position: relative;
+        z-index: 1;
+    }
+
+    &__inner {
+        height: 100%;
+        display: flex;
+        align-items: center;
+        overflow: visible;
+    }
+
+    &__box {
+        text-align: center;
+        padding: 2rem 2rem 0 2rem;
+        width: 100%;
+        backdrop-filter: blur(2px);
+        background-color: rgba($white, .6);
+        color: $black;
+
+        @include media-breakpoint-up(sm) {
+            width: 90%;
+            margin: 0 auto;
+        }
+
+        @include media-breakpoint-up(md) {
+            width: 75%;
+            margin: 1rem 0 1rem auto;
+            max-width: none;
+        }
+
+        @include media-breakpoint-up(lg) {
+            display: flex;
+            margin: 1rem 8% 1rem auto;
+            flex-flow: column nowrap;
+            justify-content: center;
+            align-items: center;
+            padding: 3rem 3rem 0 3rem;
+            width: 50%;
+        }
+
+        @include media-breakpoint-up(xl) {
+            width: 40%;
+        }
+
+        .btn {
+            transform: translateY(1.5rem);
+
+            @include hover-focus() {
+                transform: translateY(1.5rem), scale(1.1);
+            }
+        }
+    }
+}

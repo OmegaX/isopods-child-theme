@@ -1,0 +1,25 @@
+.contact {
+	padding-top: 4rem;
+
+	&__row {
+		@include make-grid-row();
+		justify-content: center;
+	}
+
+	&__col-wysiwyg {
+		margin-bottom: 3rem;
+
+		@include media-breakpoint-up(lg) {
+			@include make-grid-col(6);
+			padding: 2.5rem;
+			margin-bottom: 0;
+		}
+	}
+
+	&__col-form {
+
+		@include media-breakpoint-up(lg) {
+			@include make-grid-col(6);
+		}
+	}
+}

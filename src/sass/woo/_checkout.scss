@@ -1,0 +1,72 @@
+.checkout {
+
+	h3 {
+		margin-bottom: 1.5rem;
+	}
+
+	&__review {
+
+		table {
+			@extend .table;
+			background-color: $secondary-l;
+		}
+	}
+
+	&__row {
+		@include make-grid-row(1);
+		padding-top: 2rem;
+
+		@include media-breakpoint-up(lg) {
+			@include make-grid-row(2);
+			margin-bottom: 3rem;
+		}
+
+		.checkout__col-billing {
+			padding-left: 0;
+			padding-right: 0;
+		}
+
+		.checkout__col-shipping {
+			padding-left: 0;
+			padding-right: 0;
+		}
+	}
+
+	&__coupon-toggle {
+		display: none;
+
+		@include media-breakpoint-up(lg) {
+			width: 50%;
+		}
+	}
+
+	&__coupon-form {
+		@include make-grid-row(1);
+		padding-top: 1rem;
+		display: none;
+
+		@include media-breakpoint-up(lg) {
+			width: 50%;
+			grid-template-columns: 1fr 2fr;
+		}
+	}
+
+	&__payment_method-list {
+		
+	}
+
+	&__payment-method-item {
+
+		label > span,
+		label > img  {
+			margin-left: 1rem;
+		}
+	}
+
+	&__payment {
+
+		@include media-breakpoint-up(lg) {
+			width: 50%;
+		}
+	}
+}

@@ -1,0 +1,175 @@
+.woocommerce-product {
+	@include make-grid-row(1);
+
+	@include media-breakpoint-up(lg) {
+		@include make-grid-row(2);
+	}
+
+	&__images {
+
+		@include media-breakpoint-up(lg) {
+			@include make-grid-col(1);
+			margin-right: 3rem;
+		}
+	}
+
+	&__summary {
+
+		.entry-title {
+			margin-bottom: .5rem;
+		}
+
+		@include media-breakpoint-up(lg) {
+			@include make-grid-col(1);
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+		}
+	}
+
+	&__add-cart {
+		margin-bottom: 1.5rem;
+
+		.btn {
+			margin-top: 1.5rem;
+			margin-left: 0;
+		}
+	}
+
+	&__price {
+		@extend h2;
+	}
+
+	&__upsells {
+
+		@include media-breakpoint-up(lg) {
+			@include make-grid-col(2);
+		}
+	}
+
+	&__short-description {
+		margin-bottom: 1rem;
+	}
+
+	&__onsale {
+		
+	}
+
+	&__comment-wrap {
+		
+	}
+
+	&__comment-text {
+		
+	}
+
+	&__meta {
+		font-style: italic;
+		font-size: $font-size-sm;
+	}
+
+	&__tab-wrap {
+		display: none;
+	}
+
+	&__tab-panel {
+		
+		@include media-breakpoint-up(lg) {
+			@include make-grid-col(1);
+		}
+	}	
+
+	&__tab-list {
+		display: none;
+	}
+
+	&__tab-list-item {
+		
+	}
+
+	&-gallery {
+
+		&--with-images {
+			margin-bottom: 1rem;
+		}
+
+		&--without-images {
+
+		}
+
+		.flex-control-thumbs {
+			list-style: none;
+			padding: 0;
+			margin-top: 1rem;
+
+			li {
+				grid-column: span 1;
+			}
+		}
+
+		&--columns {
+
+			@include media-breakpoint-up(lg) {
+
+				&-2 {
+
+					.flex-control-thumbs {
+						@include make-grid-row(2);
+					}
+				}
+
+				&-3 {
+
+					.flex-control-thumbs {
+						@include make-grid-row(3);
+					}
+				}
+
+				&-4 {
+
+					.flex-control-thumbs {
+						@include make-grid-row(4);
+					} 
+				}
+
+				&-5 {
+
+					.flex-control-thumbs {
+						@include make-grid-row(5);
+					}
+				}
+
+				&-6 {
+
+					.flex-control-thumbs {
+						@include make-grid-row(6);
+					}
+				}
+			}
+		}
+	}
+
+	&__image {
+		position: relative;
+		height: 0;
+		border-radius: 50%;
+		overflow: hidden;
+		padding-top: 100%;
+		width: 100%;
+		cursor: crosshair;
+
+		a {
+			display: block;
+			width: 100%;
+			height: 100%;
+			position: absolute;
+			top: 0;
+			left: 0;
+
+			img {
+				object-fit: cover;
+				object-position: center;
+			}
+		}
+	}
+}

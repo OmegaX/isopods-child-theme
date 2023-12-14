@@ -1,0 +1,52 @@
+@mixin scroll-bar() {
+
+	@include media-breakpoint-up(md) {
+		/* width */
+		&::-webkit-scrollbar {
+			width: 1rem;
+		}
+
+		/* Track */
+		&::-webkit-scrollbar-track {
+			border-left: .5px solid $black;
+			background-color: $white;
+		}
+
+		/* Handle */
+		&::-webkit-scrollbar-thumb {
+			background: $secondary-d;
+		}
+	}
+}
+
+@mixin position($position, $top, $right, $bottom, $left) {
+	position: $position;
+	top: $top;
+	bottom: $bottom;
+	left: $left;
+	right: $right;
+}
+
+@mixin make-grid-row($number: 12) {
+	display: -ms-grid;
+	display: grid;
+	grid-gap: 2rem;
+	grid-template-rows: auto;
+	grid-template-columns: repeat($number, 1fr);
+
+	& > div {
+		min-width: 0;
+	}
+}
+
+@mixin make-grid-col($number) {
+
+	@supports (display: flex) and (not (display: grid)) {
+		@include make-col($number);
+	}
+
+	@supports (display: grid) {
+		grid-column: span $number;
+		min-width: 0;
+	}
+}

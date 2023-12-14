@@ -1,0 +1,23 @@
+.logged-out {
+
+	&__grid-row {
+		@include make-grid-row(1);
+
+		.col-1,
+		.col-2 {
+			width: 100%;
+			padding: 0;
+			flex: unset;
+			max-width: none;
+		}
+
+		@include media-breakpoint-up(md) {
+			@include make-grid-row(2);
+		}
+	}
+
+	&__inline-row {
+		display: flex;
+		align-items: center;
+	}
+}

@@ -1,0 +1,70 @@
+.woocommerce-loop-product {
+	@include make-grid-row(1);
+	padding-top: 2rem;
+	padding-left: 0;
+
+	@include media-breakpoint-up(sm) {
+
+		&--2,
+		&--3,
+		&--4 {
+			@include make-grid-row(2);
+		}
+
+		&--5,
+		&--6 {
+			@include make-grid-row(3);
+		}
+	}
+
+	@include media-breakpoint-up(lg) {
+
+		&--2 {
+			@include make-grid-row(2);
+		}
+
+		&--3 {
+			@include make-grid-row(3);
+		}
+
+		&--4 {
+			@include make-grid-row(4);
+		}
+
+		&--5 {
+			@include make-grid-row(5);
+		}
+
+		&--6 {
+			@include make-grid-row(6);
+		}
+	}
+
+	&__item {
+		list-style: none;
+	}
+
+	&__title {
+		padding-top: 1rem;
+	}
+
+	&__price {
+		margin-bottom: 1rem;
+	}
+
+	&__link {
+		display: block;
+		text-align: center;
+		display: block;
+		width: 90%;
+		margin: 0 auto 1rem auto;
+
+		@include media-breakpoint-up(sm) {
+			width: 100%;
+		}
+
+		& > img {
+			border-radius: 50%;
+		}
+	}
+}
