@@ -4,7 +4,7 @@
 defined( 'ABSPATH' ) || exit;
 
 $container = get_theme_mod( 'understrap_container_type' );
-$products  = get_sub_field('products');
+$products  = get_sub_field( 'products' );
 $heading   = get_sub_field( 'heading' );
 ?>
 
@@ -16,12 +16,14 @@ $heading   = get_sub_field( 'heading' );
 
 		<div class="product-callout__grid ">
 
-			<?php while( have_rows( 'products' ) ) : the_row();
+			<?php
+			while ( have_rows( 'products' ) ) :
+				the_row();
 				$wp_post    = get_sub_field( 'product' );
 				$heading    = get_sub_field( 'heading' );
 				$subheading = get_sub_field( 'subheading' );
 				$product    = wc_get_product( $wp_post->ID );
-			?>
+				?>
 				<a class="product-callout__link" href="<?php echo $product->get_permalink(); ?>">
 					<figure class="product-callout__img-wrap">
 						<?php echo $product->get_image(); ?>

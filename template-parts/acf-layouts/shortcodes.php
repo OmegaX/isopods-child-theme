@@ -4,8 +4,8 @@
 defined( 'ABSPATH' ) || exit;
 
 $container = get_theme_mod( 'understrap_container_type' );
-$heading   = get_sub_field('heading');
-$shortcode = get_sub_field('shortcode');
+$heading   = get_sub_field( 'heading' );
+$shortcode = get_sub_field( 'shortcode' );
 ?>
 
 <section class="shortcodes">

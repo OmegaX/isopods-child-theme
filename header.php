@@ -42,7 +42,7 @@ $container   = get_theme_mod( 'understrap_container_type' );
 
 		<div class="header__fixed">
 
-	  		<div class="header__container ds-container <?php echo esc_attr( $container ); ?>">
+			  <div class="header__container ds-container <?php echo esc_attr( $container ); ?>">
 
 				<div class="header__strip">
 
@@ -64,9 +64,9 @@ $container   = get_theme_mod( 'understrap_container_type' );
 
 				<header class="header__tagline">
 
-		  			<h5><?php echo esc_html( $tagline_1 ); ?></h5>
+					<h5><?php echo esc_html( $tagline_1 ); ?></h5>
 
-		  			<h6><?php echo esc_html( $tagline_2 ); ?></h6>
+					<h6><?php echo esc_html( $tagline_2 ); ?></h6>
 
 				</header>
 
@@ -83,7 +83,7 @@ $container   = get_theme_mod( 'understrap_container_type' );
 
 						<div class="header__mini-cart-contents">
 
-			  				<div id="update-mini-cart-contents">
+							  <div id="update-mini-cart-contents">
 
 								<?php echo wc_get_template( 'cart/mini-cart.php' ); ?>
 
@@ -95,17 +95,19 @@ $container   = get_theme_mod( 'understrap_container_type' );
 
 				</div>
 
-	  		</div><!-- .container -->
+			</div><!-- .container -->
 
 		</div>
 
-		<div class="hero hero--<?php echo ( $hero_height && 'none' !== $hero_type ) ? $hero_height : "notset"; ?>">
+		<div class="hero hero--<?php echo ( $hero_height && 'none' !== $hero_type ) ? $hero_height : 'notset'; ?>">
 
-			<?php if ( "parallax" == $hero_type ) :
+			<?php
+			if ( 'parallax' == $hero_type ) :
 				get_template_part( 'template-parts/parallax' );
-			elseif ( "plain" == $hero_type ) :
+			elseif ( 'plain' == $hero_type ) :
 				get_template_part( 'template-parts/plain' );
-			endif; ?>
+			endif;
+			?>
 
 		</div>
 

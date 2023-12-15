@@ -12,16 +12,18 @@ $container = get_theme_mod( 'understrap_container_type' );
 
 		<div class="row">
 
-			<?php while( have_rows('about') ): the_row();
-				$svg     = get_sub_field('svg');
-				$text    = get_sub_field('text');
-				$heading = get_sub_field('heading');
-			?>
+			<?php
+			while ( have_rows( 'about' ) ) :
+				the_row();
+				$svg     = get_sub_field( 'svg' );
+				$text    = get_sub_field( 'text' );
+				$heading = get_sub_field( 'heading' );
+				?>
 
 				<div class="col">
 
 					<div class="about__svg">
-						<?php echo wp_get_attachment_image($svg, 'medium'); ?>
+						<?php echo wp_get_attachment_image( $svg, 'medium' ); ?>
 					</div>
 
 					<h3 class="about__heading"><?php echo esc_html( $heading ); ?></h3>

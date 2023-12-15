@@ -15,9 +15,9 @@ $hero_type = get_field_object( 'hero_type', $post->ID );
 
 	<header class="entry-header">
 
-		<?php if ( "none" === $hero_type['value'] ) : ?>
+		<?php if ( 'none' === $hero_type['value'] ) : ?>
 			<?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
-		<?php else: ?>
+		<?php else : ?>
 			<?php the_title( '<h2 class="entry-title">', '</h2>' ); ?>
 		<?php endif; ?>
 

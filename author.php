@@ -1,6 +1,7 @@
 <?php
 /**
  * The template for displaying the author pages.
+ *
  * @package isopods-child
  */
 
@@ -57,7 +58,10 @@ $container = get_theme_mod( 'understrap_container_type' );
 
 				<!-- The Loop -->
 				<?php if ( have_posts() ) : ?>
-					<?php while ( have_posts() ) : the_post(); ?>
+					<?php
+					while ( have_posts() ) :
+						the_post();
+						?>
 						<li>
 							<?php
 							printf(

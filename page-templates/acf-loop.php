@@ -17,7 +17,7 @@ $id = get_the_ID(); ?>
 
 	<div class="svg-wrap">
 
-		<?php echo load_inline_svg('/isopod.svg'); ?>
+		<?php echo load_inline_svg( '/isopod.svg' ); ?>
 
 	</div>
 
@@ -27,12 +27,16 @@ $id = get_the_ID(); ?>
 
 			<?php
 			// loop through the selected ACF layouts and display the matching partial
-			if ( have_rows( 'layouts', $id ) ) : ?>
+			if ( have_rows( 'layouts', $id ) ) :
+				?>
 
-				<?php while ( have_rows( 'layouts', $id ) ) : the_row();
-					$layout_name = str_replace( "_","-", get_row_layout() );
+				<?php
+				while ( have_rows( 'layouts', $id ) ) :
+					the_row();
+					$layout_name = str_replace( '_', '-', get_row_layout() );
 					get_template_part( './template-parts/acf-layouts/' . $layout_name );
-				endwhile; ?>
+				endwhile;
+				?>
 
 			<?php endif; ?>
 

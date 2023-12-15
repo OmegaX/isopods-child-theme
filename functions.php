@@ -10,7 +10,7 @@ $ds_includes = array(
 	'/filters.php',
 	'/options.php',
 	'/shortcodes.php',
-	'/woocommerce.php'
+	'/woocommerce.php',
 );
 
 foreach ( $ds_includes as $file ) {

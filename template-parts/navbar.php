@@ -11,7 +11,8 @@ defined( 'ABSPATH' ) || exit; ?>
 <nav class="navbar">
 
 	<a class="skip-link sr-only sr-only-focusable" href="#content"><?php esc_html_e( 'Skip to content', 'understrap' ); ?></a>
-	<?php wp_nav_menu(
+	<?php
+	wp_nav_menu(
 		array(
 			'theme_location'  => 'primary',
 			'container_class' => '',
@@ -22,6 +23,7 @@ defined( 'ABSPATH' ) || exit; ?>
 			'depth'           => 2,
 			'walker'          => new Understrap_WP_Bootstrap_Navwalker(),
 		)
-	); ?>
+	);
+	?>
 	
 </nav><!-- .navbar -->

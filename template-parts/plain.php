@@ -12,9 +12,11 @@ defined( 'ABSPATH' ) || exit;
 $query     = get_queried_object();
 $container = get_theme_mod( 'understrap_container_type' ); ?>
 
-<?php while( have_rows( 'plain', $query->ID ) ) : the_row();
+<?php
+while ( have_rows( 'plain', $query->ID ) ) :
+	the_row();
 	$heading = get_sub_field( 'heading' );
-?>
+	?>
 
 	<div class="hero-plain">
 

@@ -16,24 +16,24 @@ add_action( 'woocommerce_before_main_content', 'ds_woocommerce_wrapper_start', 1
 add_action( 'woocommerce_after_main_content', 'ds_woocommerce_wrapper_end', 10 );
 
 if ( ! function_exists( 'ds_woocommerce_wrapper_start' ) ) {
-  function ds_woocommerce_wrapper_start() {
-	$container = get_theme_mod( 'understrap_container_type' );
-	$sidebar_pos = get_theme_mod( 'understrap_sidebar_position' );
+	function ds_woocommerce_wrapper_start() {
+		$container = get_theme_mod( 'understrap_container_type' );
+		$sidebar_pos = get_theme_mod( 'understrap_sidebar_position' );
 
-	echo '<div class="wrapper wrapper--woocommerce" id="woocommerce-wrapper">';
-	echo '<div class="' . esc_attr( $container ) . '" id="content" tabindex="-1">';
-	echo '<div class="grid grid--' . $sidebar_pos . '">';
-	if ( 'left' === $sidebar_pos || 'both' === $sidebar_pos) {
-		get_template_part( 'sidebar-templates/sidebar', 'left' );
+		echo '<div class="wrapper wrapper--woocommerce" id="woocommerce-wrapper">';
+		echo '<div class="' . esc_attr( $container ) . '" id="content" tabindex="-1">';
+		echo '<div class="grid grid--' . $sidebar_pos . '">';
+		if ( 'left' === $sidebar_pos || 'both' === $sidebar_pos ) {
+			get_template_part( 'sidebar-templates/sidebar', 'left' );
+		}
+		echo '<main class="grid__col grid__col--woo" id="main">';
 	}
-	echo '<main class="grid__col grid__col--woo" id="main">';
-  }
 }
 
 if ( ! function_exists( 'ds_woocommerce_wrapper_end' ) ) {
 	function ds_woocommerce_wrapper_end() {
 		echo '</main><!-- #main -->';
-		if ( 'right' === $sidebar_pos || 'both' === $sidebar_pos) {
+		if ( 'right' === $sidebar_pos || 'both' === $sidebar_pos ) {
 			get_template_part( 'sidebar-templates/sidebar', 'right' );
 		}
 		echo '</div><!-- .grid -->';
@@ -61,7 +61,7 @@ if ( ! function_exists( 'ds_woocommerce_support' ) ) {
 }
 
 /**
- * Remove the breadcrumbs 
+ * Remove the breadcrumbs
  */
 add_action( 'init', 'ds_woocommerce_remove_breadcrumbs' );
 if ( ! function_exists( 'ds_woocommerce_remove_breadcrumbs' ) ) {
@@ -73,29 +73,29 @@ if ( ! function_exists( 'ds_woocommerce_remove_breadcrumbs' ) ) {
 // account navigation
 add_action( 'woocommerce_before_account_navigation', 'ds_action_woocommerce_before_account_navigation', 10, 0 );
 if ( ! function_exists( 'ds_action_woocommerce_before_account_navigation' ) ) {
-	function ds_action_woocommerce_before_account_navigation(  ) {
+	function ds_action_woocommerce_before_account_navigation() {
 		echo '<div class="account__nav">';
 		echo '<h4>Members Menu</h4>';
 	};
 }
 add_action( 'woocommerce_after_account_navigation', 'ds_action_woocommerce_after_account_navigation', 10, 0 );
 if ( ! function_exists( 'ds_action_woocommerce_after_account_navigation' ) ) {
-	function ds_action_woocommerce_after_account_navigation(  ) {
-	  echo '</div>';
+	function ds_action_woocommerce_after_account_navigation() {
+		echo '</div>';
 	};
 }
 
 add_action( 'woocommerce_before_cart', 'ds_action_woocommerce_before_cart', 10, 0 );
 if ( ! function_exists( 'ds_action_woocommerce_before_before_cart' ) ) {
 
-	function ds_action_woocommerce_before_cart(  ) {
-	  echo '<div class="woocommerce-cart__grid">';
+	function ds_action_woocommerce_before_cart() {
+		echo '<div class="woocommerce-cart__grid">';
 	};
 }
 
 add_action( 'woocommerce_after_cart', 'ds_action_woocommerce_after_cart', 10, 0 );
 if ( ! function_exists( 'ds_action_woocommerce_after_cart' ) ) {
-	function ds_action_woocommerce_after_cart(  ) {
-	  echo '</div>';
+	function ds_action_woocommerce_after_cart() {
+		echo '</div>';
 	};
 }

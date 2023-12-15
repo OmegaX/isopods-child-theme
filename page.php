@@ -28,7 +28,10 @@ $sidebar_pos = get_theme_mod( 'understrap_sidebar_position' );
 
 			<main class="grid__col grid__col--site-main" id="main">
 
-				<?php while ( have_posts() ) : the_post(); ?>
+				<?php
+				while ( have_posts() ) :
+					the_post();
+					?>
 
 					<?php get_template_part( 'loop-templates/content', 'page' ); ?>
 
